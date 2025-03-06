@@ -1,5 +1,5 @@
 const express = require("express");
-const loaders = require("./src/loaders");
+const loaders = require("./Loaders");
 const config = require("./config");
 
 const app = express();

@@ -3,6 +3,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const helmet = require("helmet");
 const routes = require("./src/routes");
+const loadSwagger = require("./src/loaders/swagger.loader"); // Importar Swagger
 
 const app = express();
 
@@ -16,9 +17,17 @@ app.use(express.urlencoded({ extended: true })); // Permite recibir datos en for
 // Cargar rutas
 app.use("/api", routes);
 
-// Middleware para manejar errores
+// Cargar documentación Swagger
+loadSwagger(app);
+
+// Middleware para manejar rutas no encontradas (404)
+app.use((req, res, next) => {
+    res.status(404).json({ message: "Ruta no encontrada" });
+});
+
+// Middleware para manejar errores globales
 app.use((err, req, res, next) => {
-    console.error(err.stack);
+    console.error("❌ Error:", err.stack);
     res.status(500).json({ message: "Error interno del servidor" });
 });
 

@@ -1,5 +1,5 @@
 const express = require("express");
-const { getCars, getCarById, addCar, updateCar, deleteCar } = require("../controllers/cars.controller");
+const { getCars, getCarById, addCar, updateCar, deleteCar } = require("../Controllers/car.controller");
 
 const router = express.Router();
 

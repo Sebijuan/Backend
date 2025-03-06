@@ -1,7 +1,7 @@
 const express = require("express");
 
 const authRoutes = require("./auth.routes");
-const carsRoutes = require("./cars.routes");
+const carsRoutes = require("./car.routes");
 const configRoutes = require("./config.routes");
 const ordersRoutes = require("./orders.routes");
 const paymentsRoutes = require("./payments.routes");
@@ -14,7 +14,7 @@ const router = express.Router();
 
 // Definir rutas principales
 router.use("/auth", authRoutes);
-router.use("/cars", carsRoutes);
+router.use("/car", carsRoutes);
 router.use("/config", configRoutes);
 router.use("/orders", ordersRoutes);
 router.use("/payments", paymentsRoutes);
