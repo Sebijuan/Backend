@@ -1,5 +1,5 @@
 # SJ CUSTOMS API
-
+![Descripción de la imagen](https://files.oaiusercontent.com/file-3DCsMTxv1DW2nEC44h6FnQ?se=2025-03-07T19%3A19%3A24Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D96355607-3216-4d11-bb7d-ed00285f0c45.webp&sig=yQ3zKUqVaxjt1ge3sT%2BA%2BIaqcK588HiStJhUWV05ULs%3D)
 ## Descripción
 SJ CUSTOMS API es una API para la gestión de tuneo y personalización de coches. Proporciona funcionalidades para registrar usuarios, iniciar sesión, gestionar coches, configurar opciones de personalización, realizar pedidos, procesar pagos, y más.
 
@@ -78,3 +78,4 @@ src/
 ├── [config.js](http://_vscodecontentref_/2)           # Configuración de variables de entorno
 ├── [index.js](http://_vscodecontentref_/3)            # Punto de entrada de la aplicación
 └── .env                # Variables de entorno
+
