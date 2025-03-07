@@ -1,8 +1,7 @@
-const express = require("express");
-const { compareCars } = require("../controllers/compare.controller");
+import express from"express";
+import { compareCars } from"../Controllers/compare.controller.js";
 
 const router = express.Router();
 
 router.post("/", compareCars);
-
-module.exports = router;
+export default router;

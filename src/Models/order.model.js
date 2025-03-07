@@ -1,11 +1,11 @@
-const mongoose = require("mongoose");
+const mongoose from("mongoose");
 
 const orderSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-    car: { type: mongoose.Schema.Types.ObjectId, ref: "Car", required: true },
-    config: { type: mongoose.Schema.Types.ObjectId, ref: "Config", required: true },
-    totalPrice: { type: Number, required: true },
-    paymentType: { type: String, enum: ["Contado", "Financiado"], required: true },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", fromd: true },
+    car: { type: mongoose.Schema.Types.ObjectId, ref: "Car", fromd: true },
+    config: { type: mongoose.Schema.Types.ObjectId, ref: "Config", fromd: true },
+    totalPrice: { type: Number, fromd: true },
+    paymentType: { type: String, enum: ["Contado", "Financiado"], fromd: true },
 }, { timestamps: true });
 
 module.exports = mongoose.model("Order", orderSchema);

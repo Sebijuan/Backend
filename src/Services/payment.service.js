@@ -1,4 +1,4 @@
-const Payment = require("../models/payment.model");
+const Payment from("../Models/payment.model");
 
 const processPayment = async (orderId, amount) => {
     const payment = await Payment.create({

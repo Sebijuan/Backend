@@ -1,9 +1,9 @@
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const User = require("../Models/user.model");
-const config = require("../config");
+import bcrypt from"bcrypt";
+import jwt from"jsonwebtoken";
+import User from"../Models/user.model.js";
+import config from"../config.js";
 
-exports.register = async (req, res) => {
+export const register = async (req, res) => {
     try {
         const { username, email, password } = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -15,7 +15,7 @@ exports.register = async (req, res) => {
     }
 };
 
-exports.login = async (req, res) => {
+export const login = async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await User.findOne({ email });
@@ -31,12 +31,12 @@ exports.login = async (req, res) => {
     }
 };
 
-exports.forgotPassword = async (req, res) => {
+export const forgotPassword = async (req, res) => {
     // Lógica para enviar un correo con enlace de recuperación
     res.json({ message: "Correo de recuperación enviado" });
 };
 
-exports.resetPassword = async (req, res) => {
+export const resetPassword = async (req, res) => {
     // Lógica para restablecer la contraseña
     res.json({ message: "Contraseña restablecida" });
 };

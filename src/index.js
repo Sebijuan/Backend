@@ -1,11 +1,8 @@
-const express = require("express");
-const loaders = require("./Loaders");
-const config = require("./config");
 
-const app = express();
+import app from"./app.js";
+import config from"./config.js";
 
-// Cargar todos los loaders (Base de datos, middlewares, rutas, etc.)
-loaders(app);
+
 
 const PORT = config.port || 3000;
 

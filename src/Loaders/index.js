@@ -1,9 +1,10 @@
-const expressLoader = require("./express.loader");
-const swaggerLoader = require("./swagger.loader");
-const databaseLoader = require("./database.loader");
+import expressLoader from"./express.loader.js";
+import swaggerLoader from"./swagger.loader.js";
+import databaseLoader from"./database.loader.js";
 
-module.exports = (app) => {
+const loaders  = (app) => {
     databaseLoader();
     expressLoader(app);
     swaggerLoader(app);
-};
+};console.log("url mongo", process.env.MONGO_URI)
+export default loaders;

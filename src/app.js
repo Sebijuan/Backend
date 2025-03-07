@@ -1,9 +1,8 @@
-const express = require("express");
-const cors = require("cors");
-const morgan = require("morgan");
-const helmet = require("helmet");
-const routes = require("./src/routes");
-const loadSwagger = require("./src/loaders/swagger.loader"); // Importar Swagger
+import express from"express";
+import cors from"cors";
+import morgan from"morgan";
+import helmet from"helmet";
+import index from"./Loaders/index.js"; // Importar Swagger
 
 const app = express();
 
@@ -14,11 +13,10 @@ app.use(morgan("dev")); // Muestra logs de las peticiones en consola
 app.use(express.json()); // Permite recibir JSON en el body de las peticiones
 app.use(express.urlencoded({ extended: true })); // Permite recibir datos en formato URL-encoded
 
-// Cargar rutas
-app.use("/api", routes);
+
 
 // Cargar documentación Swagger
-loadSwagger(app);
+index(app);
 
 // Middleware para manejar rutas no encontradas (404)
 app.use((req, res, next) => {
@@ -31,4 +29,4 @@ app.use((err, req, res, next) => {
     res.status(500).json({ message: "Error interno del servidor" });
 });
 
-module.exports = app;
+export default app;

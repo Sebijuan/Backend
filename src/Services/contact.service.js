@@ -1,5 +1,5 @@
-const Contact = require("../models/contact.model");
-const { sendEmail } = require("./email.service");
+const Contact from("../Models/contact.model");
+const { sendEmail } from("./email.service");
 
 const sendContactMessage = async (messageData) => {
     const contact = await Contact.create(messageData);

@@ -1,14 +1,14 @@
-const express = require("express");
+import express from"express";
 
-const authRoutes = require("./auth.routes");
-const carsRoutes = require("./car.routes");
-const configRoutes = require("./config.routes");
-const ordersRoutes = require("./orders.routes");
-const paymentsRoutes = require("./payments.routes");
-const usersRoutes = require("./users.routes");
-const likesRoutes = require("./likes.routes");
-const compareRoutes = require("./compare.routes");
-const contactRoutes = require("./contact.routes");
+import authRoutes from"./auth.routes.js";
+import carsRoutes from"./car.routes.js";
+import configRoutes from"./config.routes.js";
+import ordersRoutes from"./order.routes.js";
+import paymentsRoutes from"./payment.routes.js";
+import usersRoutes from"./user.routes.js";
+import likesRoutes from"./likes.routes.js";
+import compareRoutes from"./compare.routes.js";
+import contactRoutes from"./contact.routes.js";
 
 const router = express.Router();
 
@@ -23,4 +23,4 @@ router.use("/likes", likesRoutes);
 router.use("/compare", compareRoutes);
 router.use("/contact", contactRoutes);
 
-module.exports = router;
+export default router;

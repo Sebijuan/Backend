@@ -1,6 +1,6 @@
-const User = require("../models/user.model");
-const bcrypt = require("bcryptjs");
-const generateToken = require("../Utils/generateToken");
+const User from("../Models/user.model");
+const bcrypt from("bcryptjs");
+const generateToken from("../Utils/generateToken");
 
 const registerUser = async (userData) => {
     const { username, email, password } = userData;

@@ -1,10 +1,10 @@
-const express = require("express");
-const cors = require("cors");
-const helmet = require("helmet");
-const morgan = require("morgan");
-const routes = require("../Routes");
+import express from"express";
+import cors from"cors";
+import helmet from"helmet";
+import morgan from"morgan";
+import routes from"../Routes/index.js";
 
-module.exports = (app) => {
+const expressloader  = (app) => {
     app.use(cors());
     app.use(helmet());
     app.use(morgan("dev"));
@@ -19,3 +19,4 @@ module.exports = (app) => {
 
     console.log("✅ Express configurado correctamente");
 };
+export default expressloader;
