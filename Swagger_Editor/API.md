@@ -67,9 +67,14 @@ paths:
               properties:
                 email:
                   type: string
+                  example: usuario@email.com
       responses:
         '200':
           description: Correo de recuperación enviado
+        '404':
+          description: Usuario no encontrado
+        '500':
+          description: Error al enviar el correo
   /api/auth/reset-password:
     post:
       summary: Restablece la contraseña del usuario
@@ -82,11 +87,19 @@ paths:
             schema:
               type: object
               properties:
-                password:
+                email:
                   type: string
+                  example: usuario@email.com
+                newPassword:
+                  type: string
+                  example: NuevaContraseña123
       responses:
         '200':
-          description: Contraseña restablecida
+          description: Contraseña restablecida con éxito
+        '404':
+          description: Usuario no encontrado
+        '500':
+          description: Error al restablecer la contraseña
   /api/car:
     get:
       summary: Obtiene todos los coches
