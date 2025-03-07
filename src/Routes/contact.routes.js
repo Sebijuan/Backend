@@ -1,5 +1,5 @@
 import express from "express";
-import { sendContactMessage } from "../Controllers/contact.controller.js";
+import { sendContactMessage } from "../controllers/contact.controller.js";
 
 const router = express.Router();
 
@@ -25,6 +25,10 @@ const router = express.Router();
  *     responses:
  *       200:
  *         description: Mensaje enviado con éxito
+ *       400:
+ *         description: Datos faltantes
+ *       500:
+ *         description: Error en el servidor
  */
 router.post("/", sendContactMessage);
 
