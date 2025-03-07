@@ -1,4 +1,4 @@
-const Joi from("joi");
+import Joi from"joi";
 
 const validate = (schema) => (req, res, next) => {
     const { error } = schema.validate(req.body);
@@ -8,4 +8,11 @@ const validate = (schema) => (req, res, next) => {
     next();
 };
 
-module.exports = validate;
+export const validateCar = validate(
+    Joi.object({
+        brand: Joi.string().required(),
+        model: Joi.string().required(),
+        year: Joi.number().required(),
+        kms: Joi.number().required(),
+    })
+);

@@ -10,6 +10,6 @@ dotenv.config({ path: path.resolve(dirname, '.env') });
 // Exportar MONGO_URI
 const mongo = process.env.MONGO_URI;
 
-console.log('url mongo:', mongo); // Verifica que se haya cargado correctamente
+
 
 export default mongo;

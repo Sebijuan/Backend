@@ -1,5 +1,5 @@
-const jwt from("jsonwebtoken");
-const config from("../config");
+import jwt from"jsonwebtoken";
+import config from"../config.js";
 
 const generateToken = (user) => {
     return jwt.sign(
@@ -9,4 +9,4 @@ const generateToken = (user) => {
     );
 };
 
-module.exports = generateToken;
+export default generateToken;

@@ -1,5 +1,5 @@
-const nodemailer from("nodemailer");
-const config from("../config");
+import nodemailer from"nodemailer";
+import config from"../config.js";
 
 const sendEmail = async (to, subject, text) => {
     try {
@@ -24,4 +24,4 @@ const sendEmail = async (to, subject, text) => {
     }
 };
 
-module.exports = sendEmail;
+export default sendEmail;

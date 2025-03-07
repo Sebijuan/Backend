@@ -1,6 +1,6 @@
-import swaggerJsDoc from"swagger-jsdoc";
-import swaggerUi from"swagger-ui-express";
-
+import swaggerJsDoc from "swagger-jsdoc";
+import swaggerUi from "swagger-ui-express";
+import routes from "../Routes/index.js";
 const options = {
     definition: {
         openapi: "3.0.0",
@@ -16,7 +16,7 @@ const options = {
             },
         ],
     },
-    apis: ["./src/routes/*.js"], // Ruta donde están definidas las rutas de la API
+    apis: ["./src/Routes/*.js"], // Ruta donde están definidas las rutas de la API
 };
 
 const swaggerSpec = swaggerJsDoc(options);
