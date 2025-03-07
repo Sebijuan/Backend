@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import mongoURI from '../config.js';  // Aquí se importa la URL de MongoDB correctamente
-import routes from '../Routes/index.js';  // Aquí se importan las rutas correctamente
+
 const connectDB = async () => {
     try {
         await mongoose.connect(mongoURI, {

@@ -1,6 +1,11 @@
 import swaggerJsDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
-import routes from "../Routes/index.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const options = {
     definition: {
         openapi: "3.0.0",
@@ -16,7 +21,7 @@ const options = {
             },
         ],
     },
-    apis: ["./src/Routes/*.js"], // Ruta donde están definidas las rutas de la API
+    apis: [path.join(__dirname, "../Routes/*.js")], // Ruta corregida para evitar problemas
 };
 
 const swaggerSpec = swaggerJsDoc(options);
