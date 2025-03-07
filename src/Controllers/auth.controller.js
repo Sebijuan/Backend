@@ -1,7 +1,7 @@
-import bcrypt from"bcrypt";
-import jwt from"jsonwebtoken";
-import User from"../Models/user.model.js";
-import config from"../config.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import User from "../Models/user.model.js";
+import config from "../config.js";
 
 export const register = async (req, res) => {
     try {
@@ -11,6 +11,7 @@ export const register = async (req, res) => {
 
         res.status(201).json({ message: "Usuario registrado exitosamente", user: newUser });
     } catch (error) {
+        console.error("Error en el registro:", error);
         res.status(500).json({ message: "Error al registrar usuario", error });
     }
 };
@@ -18,15 +19,24 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
     try {
         const { email, password } = req.body;
-        const user = await User.findOne({ email });
+        console.log("Intentando iniciar sesión con:", email);
 
-        if (!user || !(await bcrypt.compare(password, user.password))) {
+        const user = await User.findOne({ email });
+        if (!user) {
+            console.log("Usuario no encontrado:", email);
+            return res.status(401).json({ message: "Credenciales incorrectas" });
+        }
+
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
+            console.log("Contraseña incorrecta para el usuario:", email);
             return res.status(401).json({ message: "Credenciales incorrectas" });
         }
 
         const token = jwt.sign({ id: user._id }, config.jwt.secret, { expiresIn: config.jwt.expiresIn });
         res.json({ message: "Inicio de sesión exitoso", token });
     } catch (error) {
+        console.error("Error en el inicio de sesión:", error);
         res.status(500).json({ message: "Error al iniciar sesión", error });
     }
 };
