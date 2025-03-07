@@ -1,4 +1,4 @@
-const Car from("../Models/car.model");
+import Car from"../Models/car.model.js";
 
 const getAllCars = async () => {
     return await Car.find();
@@ -10,4 +10,4 @@ const getCarById = async (id) => {
     return car;
 };
 
-module.exports = { getAllCars, getCarById };
+export { getAllCars, getCarById };

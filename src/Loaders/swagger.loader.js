@@ -22,7 +22,7 @@ const options = {
             },
         ],
     },
-    apis: [path.join(__dirname, "../Routes/*.js")], // Ruta corregida para evitar problemas
+    apis: [path.join(__dirname, "../Routes/*.js")], 
 };
 
 const swaggerSpec = swaggerJsDoc(options);
