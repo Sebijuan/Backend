@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /config:
+ * /api/config:
  *   get:
  *     summary: Obtiene opciones de configuración de coches
  *     tags: [Config]
@@ -17,7 +17,7 @@ router.get("/", getConfigOptions);
 
 /**
  * @swagger
- * /config:
+ * /api/config:
  *   post:
  *     summary: Guarda la configuración de un coche
  *     tags: [Config]

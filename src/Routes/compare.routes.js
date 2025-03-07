@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /compare:
+ * /api/compare:
  *   post:
  *     summary: Compara coches
  *     tags: [Compare]

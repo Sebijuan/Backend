@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /payments/options:
+ * /api/payments/options:
  *   get:
  *     summary: Obtiene opciones de pago
  *     tags: [Payment]
@@ -17,7 +17,7 @@ router.get("/options", getPaymentOptions);
 
 /**
  * @swagger
- * /payments/pay:
+ * /api/payments/pay:
  *   post:
  *     summary: Procesa un pago
  *     tags: [Payment]

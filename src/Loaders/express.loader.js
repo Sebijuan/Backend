@@ -11,7 +11,9 @@ const expressloader  = (app) => {
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
 
-    
+    // Rutas principales
+    app.use("/api", routes);
+
     // Ruta de prueba
     app.get("/", (req, res) => res.send("🚀 API funcionando correctamente"));
 

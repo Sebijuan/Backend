@@ -2,6 +2,7 @@ import swaggerJsDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 import path from "path";
 import { fileURLToPath } from "url";
+import fs from "fs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -25,6 +26,11 @@ const options = {
 };
 
 const swaggerSpec = swaggerJsDoc(options);
+
+// Guardar la especificación en un archivo JSON
+const swaggerFilePath = path.join(__dirname, "swagger.json");
+fs.writeFileSync(swaggerFilePath, JSON.stringify(swaggerSpec, null, 2));
+console.log(`📄 Swagger JSON generado en: ${swaggerFilePath}`);
 
 const loadSwagger = (app) => {
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));

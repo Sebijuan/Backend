@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /likes/{carId}:
+ * /api/likes/{carId}:
  *   post:
  *     summary: Agrega un coche a favoritos
  *     tags: [Likes]
@@ -23,7 +23,7 @@ router.post("/:carId", likeCar);
 
 /**
  * @swagger
- * /likes/{carId}:
+ * /api/likes/{carId}:
  *   delete:
  *     summary: Elimina un coche de favoritos
  *     tags: [Likes]
@@ -41,7 +41,7 @@ router.delete("/:carId", unlikeCar);
 
 /**
  * @swagger
- * /likes:
+ * /api/likes:
  *   get:
  *     summary: Obtiene los coches favoritos del usuario
  *     tags: [Likes]

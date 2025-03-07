@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /contact:
+ * /api/contact:
  *   post:
  *     summary: Envía un mensaje de contacto
  *     tags: [Contact]

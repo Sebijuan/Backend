@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /car:
+ * /api/car:
  *   get:
  *     summary: Obtiene todos los coches
  *     tags: [Car]
@@ -17,7 +17,7 @@ router.get("/", getCars);
 
 /**
  * @swagger
- * /car/{id}:
+ * /api/car/{id}:
  *   get:
  *     summary: Obtiene un coche por ID
  *     tags: [Car]
@@ -37,7 +37,7 @@ router.get("/:id", getCarById);
 
 /**
  * @swagger
- * /car:
+ * /api/car:
  *   post:
  *     summary: Agrega un nuevo coche
  *     tags: [Car]
@@ -68,7 +68,7 @@ router.post("/", addCar);
 
 /**
  * @swagger
- * /car/{id}:
+ * /api/car/{id}:
  *   put:
  *     summary: Actualiza un coche por ID
  *     tags: [Car]
@@ -105,7 +105,7 @@ router.put("/:id", updateCar);
 
 /**
  * @swagger
- * /car/{id}:
+ * /api/car/{id}:
  *   delete:
  *     summary: Elimina un coche por ID
  *     tags: [Car]

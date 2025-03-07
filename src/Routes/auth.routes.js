@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /auth/register:
+ * /api/auth/register:
  *   post:
  *     summary: Registra un nuevo usuario
  *     tags: [Auth]
@@ -32,7 +32,7 @@ router.post("/register", register);
 
 /**
  * @swagger
- * /auth/login:
+ * /api/auth/login:
  *   post:
  *     summary: Inicia sesión de un usuario
  *     tags: [Auth]
@@ -59,7 +59,7 @@ router.post("/login", login);
 
 /**
  * @swagger
- * /auth/forgot-password:
+ * /api/auth/forgot-password:
  *   post:
  *     summary: Envía un correo de recuperación de contraseña
  *     tags: [Auth]
@@ -80,7 +80,7 @@ router.post("/forgot-password", forgotPassword);
 
 /**
  * @swagger
- * /auth/reset-password:
+ * /api/auth/reset-password:
  *   post:
  *     summary: Restablece la contraseña del usuario
  *     tags: [Auth]

@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /users/profile:
+ * /api/users/profile:
  *   get:
  *     summary: Obtiene el perfil del usuario
  *     tags: [User]
@@ -17,7 +17,7 @@ router.get("/profile", getUserProfile);
 
 /**
  * @swagger
- * /users/profile:
+ * /api/users/profile:
  *   put:
  *     summary: Actualiza el perfil del usuario
  *     tags: [User]

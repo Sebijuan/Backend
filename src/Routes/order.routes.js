@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /orders:
+ * /api/orders:
  *   get:
  *     summary: Obtiene todos los pedidos
  *     tags: [Order]
@@ -17,7 +17,7 @@ router.get("/", getOrders);
 
 /**
  * @swagger
- * /orders:
+ * /api/orders:
  *   post:
  *     summary: Crea un nuevo pedido
  *     tags: [Order]

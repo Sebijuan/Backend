@@ -12,7 +12,7 @@
     }
   ],
   "paths": {
-    "/auth/register": {
+    "/api/auth/register": {
       "post": {
         "summary": "Registra un nuevo usuario",
         "tags": [
@@ -49,7 +49,7 @@
         }
       }
     },
-    "/auth/login": {
+    "/api/auth/login": {
       "post": {
         "summary": "Inicia sesión de un usuario",
         "tags": [
@@ -86,7 +86,7 @@
         }
       }
     },
-    "/auth/forgot-password": {
+    "/api/auth/forgot-password": {
       "post": {
         "summary": "Envía un correo de recuperación de contraseña",
         "tags": [
@@ -114,7 +114,7 @@
         }
       }
     },
-    "/auth/reset-password": {
+    "/api/auth/reset-password": {
       "post": {
         "summary": "Restablece la contraseña del usuario",
         "tags": [
@@ -142,7 +142,7 @@
         }
       }
     },
-    "/car": {
+    "/api/car": {
       "get": {
         "summary": "Obtiene todos los coches",
         "tags": [
@@ -196,7 +196,7 @@
         }
       }
     },
-    "/car/{id}": {
+    "/api/car/{id}": {
       "get": {
         "summary": "Obtiene un coche por ID",
         "tags": [
@@ -294,7 +294,7 @@
         }
       }
     },
-    "/compare": {
+    "/api/compare": {
       "post": {
         "summary": "Compara coches",
         "tags": [
@@ -325,7 +325,7 @@
         }
       }
     },
-    "/config": {
+    "/api/config": {
       "get": {
         "summary": "Obtiene opciones de configuración de coches",
         "tags": [
@@ -379,7 +379,7 @@
         }
       }
     },
-    "/contact": {
+    "/api/contact": {
       "post": {
         "summary": "Envía un mensaje de contacto",
         "tags": [
@@ -413,7 +413,7 @@
         }
       }
     },
-    "/likes/{carId}": {
+    "/api/likes/{carId}": {
       "post": {
         "summary": "Agrega un coche a favoritos",
         "tags": [
@@ -457,7 +457,7 @@
         }
       }
     },
-    "/likes": {
+    "/api/likes": {
       "get": {
         "summary": "Obtiene los coches favoritos del usuario",
         "tags": [
@@ -470,7 +470,7 @@
         }
       }
     },
-    "/orders": {
+    "/api/orders": {
       "get": {
         "summary": "Obtiene todos los pedidos",
         "tags": [
@@ -521,7 +521,7 @@
         }
       }
     },
-    "/payments/options": {
+    "/api/payments/options": {
       "get": {
         "summary": "Obtiene opciones de pago",
         "tags": [
@@ -534,7 +534,7 @@
         }
       }
     },
-    "/payments/pay": {
+    "/api/payments/pay": {
       "post": {
         "summary": "Procesa un pago",
         "tags": [
@@ -565,7 +565,7 @@
         }
       }
     },
-    "/users/profile": {
+    "/api/users/profile": {
       "get": {
         "summary": "Obtiene el perfil del usuario",
         "tags": [
