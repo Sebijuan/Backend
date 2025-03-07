@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
-import mongoURI from '../config.js';  // Aquí se importa la URL de MongoDB correctamente
+import config from '../config.js';  // Ahora importamos todo el objeto config
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(mongoURI, {
+        await mongoose.connect(config.mongoURI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });

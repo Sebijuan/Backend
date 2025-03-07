@@ -1,5 +1,5 @@
 import Car from"../Models/car.model.js";
-
+import mongoose from"mongoose";
 export const getCars = async (req, res) => {
     const cars = await Car.find();
     res.json(cars);
@@ -22,6 +22,22 @@ export const updateCar = async (req, res) => {
 };
 
 export const deleteCar = async (req, res) => {
-    await Car.findByIdAndDelete(req.params.id);
-    res.json({ message: "Coche eliminado" });
+    try {
+        const { id } = req.params;
+
+        // Validar si el ID es un ObjectId válido
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({ message: "ID inválido" });
+        }
+
+        const car = await Car.findByIdAndDelete(id);
+        if (!car) {
+            return res.status(404).json({ message: "Auto no encontrado" });
+        }
+
+        res.json({ message: "Auto eliminado exitosamente" });
+    } catch (error) {
+        console.error("❌ Error al eliminar auto:", error);
+        res.status(500).json({ message: "Error interno del servidor" });
+    }
 };

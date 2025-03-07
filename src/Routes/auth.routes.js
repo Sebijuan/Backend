@@ -80,6 +80,33 @@ router.post("/forgot-password", forgotPassword);
 
 /**
  * @swagger
+ * /api/auth/forgot-password:
+ *   post:
+ *     summary: Envía un correo de recuperación de contraseña
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 example: "usuario@email.com"
+ *     responses:
+ *       200:
+ *         description: Correo de recuperación enviado
+ *       404:
+ *         description: Usuario no encontrado
+ *       500:
+ *         description: Error al enviar el correo
+ */
+router.post("/forgot-password", forgotPassword);
+
+router.post("/reset-password", resetPassword);
+/**
+ * @swagger
  * /api/auth/reset-password:
  *   post:
  *     summary: Restablece la contraseña del usuario
@@ -91,11 +118,19 @@ router.post("/forgot-password", forgotPassword);
  *           schema:
  *             type: object
  *             properties:
- *               password:
+ *               email:
  *                 type: string
+ *                 example: "usuario@email.com"
+ *               newPassword:
+ *                 type: string
+ *                 example: "NuevaContraseña123"
  *     responses:
  *       200:
- *         description: Contraseña restablecida
+ *         description: Contraseña restablecida con éxito
+ *       404:
+ *         description: Usuario no encontrado
+ *       500:
+ *         description: Error al restablecer la contraseña
  */
 router.post("/reset-password", resetPassword);
 

@@ -7,9 +7,19 @@ const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 dotenv.config({ path: path.resolve(dirname, '.env') });
 
-// Exportar MONGO_URI
-const mongo = process.env.MONGO_URI;
+const config = {
+    email: {
+        host: process.env.EMAIL_HOST,
+        port: process.env.EMAIL_PORT,
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+        secure: process.env.EMAIL_SECURE === "true"
+    },
+    mongoURI: process.env.MONGO_URI,
+    jwt: {
+        secret: process.env.JWT_SECRET || 'secretKey',
+        expiresIn: process.env.JWT_EXPIRES_IN || '1d'
+    }
+};
 
-
-
-export default mongo;
+export default config;
