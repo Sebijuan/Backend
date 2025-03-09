@@ -145,7 +145,7 @@ describe("Auth Controller", () => {
         });
     });
 
-    // ...existing code...
+   
 describe("forgotPassword", () => {
     it("should handle errors", async () => {
         const req = {};
@@ -153,8 +153,8 @@ describe("forgotPassword", () => {
             json: jest.fn(),
             status: jest.fn().mockReturnThis(),
         };
-        // Simula un error (por ejemplo, usuario inexistente, error interno, etc.)
-        // Añade la lógica necesaria en forgotPassword para controlar el error
+       
+        
         await forgotPassword(req, res);
 
         // Verifica el manejo del error
@@ -172,8 +172,8 @@ describe("resetPassword", () => {
             json: jest.fn(),
             status: jest.fn().mockReturnThis(),
         };
-        // Simula un error (por ejemplo, token inválido, usuario inexistente, etc.)
-        // Añade la lógica necesaria en resetPassword para controlar el error
+       
+       
         await resetPassword(req, res);
 
         expect(res.status).toHaveBeenCalledWith(500);

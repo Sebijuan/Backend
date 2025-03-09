@@ -269,6 +269,10 @@ paths:
       responses:
         '200':
           description: Mensaje enviado con éxito
+        '400':
+          description: Datos faltantes
+        '500':
+          description: Error en el servidor
   /api/likes/{carId}:
     post:
       summary: Agrega un coche a favoritos
