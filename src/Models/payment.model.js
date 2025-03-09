@@ -1,4 +1,4 @@
-const mongoose from("mongoose");
+import mongoose from"mongoose";
 
 const paymentSchema = new mongoose.Schema({
     order: { type: mongoose.Schema.Types.ObjectId, ref: "Order", fromd: true },
