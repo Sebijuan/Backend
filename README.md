@@ -26,6 +26,7 @@
 - **Swagger**: Documentación de la API.
 - **Jest**: Framework de pruebas.
 - **Supertest**: Librería para pruebas de endpoints HTTP.
+- **Postman**: Herramienta para probar y documentar la API.
 
 ## Instalación
 
