@@ -94,6 +94,22 @@ src/
 └── .env                # Variables de entorno
 ```
 
+## Proceso para Desarrollar el Proyecto
+
+1. **Planificación**: Define los requisitos y funcionalidades que deseas implementar en la API.
+2. **Configuración del Entorno**: Asegúrate de tener Node.js y MongoDB instalados. Configura las variables de entorno en el archivo `.env`.
+3. **Estructura del Proyecto**: Organiza el proyecto siguiendo la estructura mencionada anteriormente.
+4. **Desarrollo**:
+    - **Modelos**: Define los esquemas de Mongoose para los datos.
+    - **Controladores**: Implementa la lógica de negocio en los controladores.
+    - **Rutas**: Configura las rutas de la API y asocia los controladores correspondientes.
+    - **Servicios**: Implementa servicios para manejar la lógica compleja y reutilizable.
+    - **Middlewares**: Añade middlewares para la autenticación, validación y manejo de errores.
+5. **Documentación**: Utiliza Swagger para documentar la API y mantenerla actualizada.
+6. **Pruebas**: Escribe pruebas unitarias y de integración utilizando Jest y Supertest.
+7. **Despliegue**: Despliega la API en un servidor de producción y asegúrate de que esté configurada correctamente.
+8. **Mantenimiento**: Realiza mantenimiento continuo, corrige errores y añade nuevas funcionalidades según sea necesario.
+
 ## Contribución
 
 Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
@@ -110,5 +126,5 @@ Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENS
 
 ## Contacto
 
-Para cualquier consulta o sugerencia, puedes contactarme a través de [sebijuacoc20@gmail.com](sebijuacoc20@gmail.com).
+Para cualquier consulta o sugerencia, puedes contactarme a través de [sebijuacoc20@gmail.com](mailto:sebijuacoc20@gmail.com).
 
