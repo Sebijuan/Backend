@@ -1,5 +1,5 @@
-const Contact from("../Models/contact.model");
-const { sendEmail } from("./email.service");
+import Contact from"../Models/contact.model.js";
+import { sendEmail } from"./email.service.js";
 
 const sendContactMessage = async (messageData) => {
     const contact = await Contact.create(messageData);

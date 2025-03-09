@@ -1,4 +1,4 @@
-const Order from("../Models/order.model");
+import Order from"../Models/order.model.js";
 
 const createOrder = async (orderData) => {
     const order = await Order.create(orderData);
