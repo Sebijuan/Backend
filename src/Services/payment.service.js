@@ -1,4 +1,4 @@
-const Payment from("../Models/payment.model");
+import Payment from"../Models/payment.model.js";
 
 const processPayment = async (orderId, amount) => {
     const payment = await Payment.create({
