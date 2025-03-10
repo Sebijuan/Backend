@@ -1,6 +1,6 @@
 # SJ CUSTOMS API
 
-![Descripción de la imagen](https://files.oaiusercontent.com/file-3DCsMTxv1DW2nEC44h6FnQ?se=2025-03-07T19%3A19%3A24Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D96355607-3216-4d11-bb7d-ed00285f0c45.webp&sig=yQ3zKUqVaxjt1ge3sT%2BA%2BIaqcK588HiStJhUWV05ULs%3D)
+![Descripción de la imagen](https://media.licdn.com/dms/image/v2/C5612AQG_f9jXepgY5g/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1626183737565?e=1745452800&v=beta&t=X__8jGsN-LLpfluZAd_CgX9mw92tvyhygaWg7bM1A9A)
 
 ## Descripción
 

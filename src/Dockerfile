@@ -13,6 +13,9 @@ RUN npm install
 # Copia el resto del código de la aplicación
 COPY . .
 
+# Elimina node_modules para asegurarse de que las dependencias se instalen en el contenedor
+RUN rm -rf node_modules && npm install
+
 # Expone el puerto en el que la aplicación se ejecutará
 EXPOSE 3000
 
