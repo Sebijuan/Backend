@@ -1,11 +1,17 @@
-exports.likeCar = async (req, res) => {
-    res.json({ message: "Coche agregado a favoritos" });
-};
+export function likeCar(req, res) {
+    // Simulación de dar like a un coche
+    res.json({ message: "Coche marcado como favorito" });
+}
 
-exports.unlikeCar = async (req, res) => {
-    res.json({ message: "Coche eliminado de favoritos" });
-};
+export function unlikeCar(req, res) {
+    // Simulación de quitar like a un coche
+    res.json({ message: "Coche desmarcado como favorito" });
+}
 
-exports.getUserLikes = async (req, res) => {
-    res.json([{ id: 1, name: "Lamborghini Huracán" }]);
-};
+export function getUserLikes(req, res) {
+    // Simulación de obtención de coches favoritos del usuario
+    res.json([
+        { id: 1, car: "Coche 1" },
+        { id: 2, car: "Coche 2" },
+    ]);
+}

@@ -1,7 +1,12 @@
-exports.getOrders = async (req, res) => {
-    res.json([{ id: 1, car: "Ferrari", price: 120000 }]);
-};
+export function getOrders(req, res) {
+    // Simulación de obtención de órdenes
+    res.json([
+        { id: 1, item: "Producto 1", quantity: 2 },
+        { id: 2, item: "Producto 2", quantity: 1 },
+    ]);
+}
 
-exports.createOrder = async (req, res) => {
-    res.status(201).json({ message: "Pedido creado" });
-};
+export function createOrder(req, res) {
+    // Simulación de creación de una nueva orden
+    res.json({ message: "Orden creada" });
+}

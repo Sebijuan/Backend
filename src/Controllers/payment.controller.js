@@ -1,10 +1,11 @@
-exports.getPaymentOptions = async (req, res) => {
-    res.json([
-        { type: "Contado", interest: 0 },
-        { type: "Financiado", interest: 5 },
-    ]);
-};
+export function processPayment(req, res) {
+    // Simulación de procesamiento de pago
+    res.json({ message: "Pago procesado" });
+}
 
-exports.processPayment = async (req, res) => {
-    res.json({ message: "Pago procesado con éxito" });
-};
+export function getPaymentOptions(req, res) {
+    // Simulación de obtención de opciones de pago
+    res.json({
+        methods: ["Tarjeta de crédito", "PayPal", "Transferencia bancaria"],
+    });
+}
