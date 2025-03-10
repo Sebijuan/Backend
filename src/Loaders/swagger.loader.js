@@ -27,14 +27,9 @@ const options = {
 
 const swaggerSpec = swaggerJsDoc(options);
 
-// Guardar la especificación en un archivo JSON
-const swaggerFilePath = path.join(__dirname, "swagger.json");
-fs.writeFileSync(swaggerFilePath, JSON.stringify(swaggerSpec, null, 2));
-console.log(`📄 Swagger JSON generado en: ${swaggerFilePath}`);
 
-const loadSwagger = (app) => {
+
+export default (app) => {
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-    console.log("📄 Swagger UI disponible en http://localhost:5000/api-docs");
-};
-
-export default loadSwagger;
+    app.use("/docs",(req,res,next) =>res.send(swaggerSpec));
+}

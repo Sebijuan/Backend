@@ -1,5 +1,5 @@
 # Usa una imagen base oficial de Node.js
-FROM node:14
+FROM node:20
 
 # Establece el directorio de trabajo en el contenedor
 WORKDIR /usr/src/app
@@ -8,16 +8,16 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Instala las dependencias del proyecto
-RUN npm install
+RUN npm ci --production
 
 # Copia el resto del código de la aplicación
-COPY . .
-
-# Elimina node_modules para asegurarse de que las dependencias se instalen en el contenedor
-RUN rm -rf node_modules && npm install
+COPY ./src/ ./src/
 
 # Expone el puerto en el que la aplicación se ejecutará
 EXPOSE 3000
 
+USER node
+
+
 # Define el comando para ejecutar la aplicación
-CMD ["npm", "start"]
+CMD ["node", "src/index.js"]

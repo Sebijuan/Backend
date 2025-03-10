@@ -1,4 +1,8 @@
 {
+  "name": "sj_customs_api",
+  "version": "1.0.2",
+  "description": "SJ Customs API",
+  "main": "src/index.js",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cloudinary": "^2.5.1",
@@ -24,7 +28,7 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "node index.js",
+    "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
   "type": "module"

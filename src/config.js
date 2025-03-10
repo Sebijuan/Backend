@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 // Cargar variables de entorno
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
-dotenv.config({ path: path.resolve(dirname, '.env') });
+dotenv.config();
 
 const config = {
     email: {
