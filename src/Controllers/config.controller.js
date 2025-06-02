@@ -1,13 +1,15 @@
-export function getConfigOptions(req, res) {
-    // Simulación de opciones de configuración de coches
-    res.json({
-        colors: ["Rojo", "Azul", "Negro", "Blanco"],
-        interiors: ["Cuero negro", "Cuero beige", "Tela gris"],
-        extras: ["Llantas deportivas", "Sonido premium", "Vidrios polarizados"],
-    });
+import { getConfigOptions as getOptionsService } from "../Services/config.service.js";
+
+export async function getConfigOptions(req, res) {
+  try {
+    const options = await getOptionsService();
+    res.json(options);
+  } catch (error) {
+    res.status(500).json({ message: "Error al obtener las opciones de configuración" });
+  }
 }
 
+// Puedes dejar saveConfig igual o implementarlo según tu lógica
 export function saveConfig(req, res) {
-    // Guardar configuración en la base de datos
-    res.json({ message: "Configuración guardada" });
+  res.json({ message: "Configuración guardada" });
 }
