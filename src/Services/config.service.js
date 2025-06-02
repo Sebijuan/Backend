@@ -57,8 +57,14 @@ export const getConfigOptions = async (carId = null) => {
     "683e18076c1a5e73877688": "3",   // Opel Corsa Gs Line
   };
 
-  if (carId && motorIdPorProducto[carId]) {
-    const motorId = motorIdPorProducto[carId];
+  // Normaliza el carId recibido
+  const normalizedCarId = carId ? String(carId).trim() : null;
+
+  // Debug: imprime el carId recibido y el motorId encontrado
+  // console.log("carId recibido:", normalizedCarId, "motorId:", motorIdPorProducto[normalizedCarId]);
+
+  if (normalizedCarId && motorIdPorProducto[normalizedCarId]) {
+    const motorId = motorIdPorProducto[normalizedCarId];
     return {
       ...options,
       Motor: { [motorId]: options.Motor[motorId] }
