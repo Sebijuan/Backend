@@ -1,11 +1,11 @@
-import mongoose from"mongoose";
+import mongoose from "mongoose";
 
 const carSchema = new mongoose.Schema({
-    name: { type: String, fromd: true },
-    brand: { type: String, fromd: true },
-    price: { type: Number, fromd: true },
-    engineOptions: [{ type: String, fromd: true }], // Opciones de motor
-    imageUrl: { type: String, fromd: true },
-}, { timestamps: true });
+    name: String,
+    price: Number,
+    rating: Number,
+    image: String,
+    likes: { type: Number, default: 0 }
+});
 
 export default mongoose.model("Car", carSchema);
