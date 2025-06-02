@@ -50,16 +50,19 @@ router.get("/:id", getCarById);
  *             properties:
  *               name:
  *                 type: string
- *               brand:
- *                 type: string
+ *                 example: Audi A4
  *               price:
  *                 type: number
- *               engineOptions:
- *                 type: array
- *                 items:
- *                   type: string
+ *                 example: 40000
+ *               rating:
+ *                 type: number
+ *                 example: 4
  *               imageUrl:
  *                 type: string
+ *                 example: https://res.cloudinary.com/tu_cloud/image/upload/v1234567890/audi_a4.png
+ *               likes:
+ *                 type: number
+ *                 example: 16
  *     responses:
  *       201:
  *         description: Coche agregado
