@@ -9,6 +9,12 @@ const router = express.Router();
  *   get:
  *     summary: Obtiene opciones de configuración de coches
  *     tags: [Config]
+ *     parameters:
+ *       - in: query
+ *         name: carId
+ *         schema:
+ *           type: string
+ *         description: ID del coche para filtrar motores
  *     responses:
  *       200:
  *         description: Opciones de configuración

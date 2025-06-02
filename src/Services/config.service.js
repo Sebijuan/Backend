@@ -1,7 +1,5 @@
-export const getConfigOptions = async () => {
-  // Aquí puedes cargar de la base de datos si lo necesitas
-  // Pero para este caso, devolvemos estático:
-  return {
+export const getConfigOptions = async (carId = null) => {
+  const options = {
     Interior: [
       'Asientos Tipo Bucket', 'Pack de luces LED de interior', 'Pack de Altavoces Supreme',
       'Instalación de un cielo estrellado con fibra óptica tipo Rolls-Royce',
@@ -38,4 +36,34 @@ export const getConfigOptions = async () => {
     ],
     Color: ['Rojo', 'Azul', 'Negro', 'Blanco', 'Gris']
   };
+
+  const motorIdPorProducto = {
+    "683e13f36c1a5e73877668": "8",   // Audi A4
+    "683e144d6c1a5e7387766a": "2",   // BMW X5
+    "683e149b6c1a5e7387766c": "1",   // BMW M3
+    "683e14dd6c1a5e7387766e": "4",   // Mercedes C 63 S
+    "683e15196c1a5e73877670": "6",   // Volkswagen Golf Gti
+    "683e15706c1a5e73877672": "5",   // Ford Focus Rs
+    "683e15b6c1a5e73877674": "7",    // Seat Ibiza Fr
+    "683e15bf6c1a5e73877676": "9",   // Hyundai i20 N
+    "683e16326c1a5e73877678": "11",  // Toyota Gr Supra
+    "683e16846c1a5e7387767a": "13",  // Nissan Maxima
+    "683e16ca6c1a5e7387767c": "14",  // Honda Civic Type R
+    "683e16ff6c1a5e7387767e": "12",  // Seat Leon Fr
+    "683e172e6c1a5e73877680": "10",  // Audi A1
+    "683e17636c1a5e73877682": "15",  // Hyundai i30 N
+    "683e179e6c1a5e73877684": "16",  // Lamborghini Urus
+    "683e17d66c1a5e73877686": "17",  // Ferrari 458 Italia
+    "683e18076c1a5e73877688": "3",   // Opel Corsa Gs Line
+  };
+
+  if (carId && motorIdPorProducto[carId]) {
+    const motorId = motorIdPorProducto[carId];
+    return {
+      ...options,
+      Motor: { [motorId]: options.Motor[motorId] }
+    };
+  }
+
+  return options;
 };

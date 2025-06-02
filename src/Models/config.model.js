@@ -8,4 +8,4 @@ const configSchema = new mongoose.Schema({
     engine: { type: String, fromd: true },
 }, { timestamps: true });
 
-module.exports = mongoose.model("Config", configSchema);
+export default  mongoose.model("Config", configSchema);
