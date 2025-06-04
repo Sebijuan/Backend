@@ -1,18 +1,12 @@
-import Payment from "../Models/payment.model.js";
+import stripe from "../Utils/stripe.js";
 
-export const processPayment = async (orderId, amount) => {
-    if (!orderId || typeof amount !== "number") {
-        throw new Error("Datos de pago inválidos");
-    }
-
-    // Simulación de creación de pago
-    const payment = await Payment.create({
-        order: orderId,
-        amount,
-        status: "Procesado",
+export const processStripePayment = async (amount, currency = "eur", paymentMethodId) => {
+    // Stripe espera el amount en céntimos
+    const paymentIntent = await stripe.paymentIntents.create({
+        amount: Math.round(amount * 100),
+        currency,
+        payment_method: paymentMethodId,
+        confirm: true,
     });
-
-    // Aquí podrías conectar con una pasarela de pago real
-
-    return payment;
+    return paymentIntent;
 };

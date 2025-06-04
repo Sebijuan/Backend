@@ -19,7 +19,7 @@ router.get("/options", getPaymentOptions);
  * @swagger
  * /api/payments/pay:
  *   post:
- *     summary: Procesa un pago
+ *     summary: Procesa un pago con Stripe
  *     tags: [Payment]
  *     requestBody:
  *       required: true
@@ -28,10 +28,10 @@ router.get("/options", getPaymentOptions);
  *           schema:
  *             type: object
  *             properties:
- *               order:
- *                 type: string
  *               amount:
  *                 type: number
+ *               paymentMethodId:
+ *                 type: string
  *     responses:
  *       200:
  *         description: Pago procesado con éxito

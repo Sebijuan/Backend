@@ -1,9 +1,10 @@
-import mongoose from"mongoose";
+import mongoose from "mongoose";
 
 const paymentSchema = new mongoose.Schema({
-    order: { type: mongoose.Schema.Types.ObjectId, ref: "Order", fromd: true },
-    amount: { type: Number, fromd: true },
+    order: { type: mongoose.Schema.Types.ObjectId, ref: "Order" },
+    amount: Number,
     status: { type: String, enum: ["Pendiente", "Pagado", "Rechazado"], default: "Pendiente" },
+    stripePaymentId: String, // Nuevo campo
 }, { timestamps: true });
 
-module.exports = mongoose.model("Payment", paymentSchema);
+export default mongoose.model("Payment", paymentSchema);
