@@ -5,7 +5,7 @@ export const sendPurchaseEmail = async (req, res) => {
         const { carName, imageUrl, config, price, paymentType } = req.body;
 
         const html = `
-            <h2>¡Nueva compra realizada!</h2>
+            <h2>Tu nuevo Coche te espera en nuestros talleres!</h2>
             <p><b>Coche:</b> ${carName}</p>
             <p><b>Precio:</b> ${price} €</p>
             <p><b>Tipo de pago:</b> ${paymentType}</p>
@@ -22,7 +22,7 @@ export const sendPurchaseEmail = async (req, res) => {
 
         await sendEmail(
             "sebipro2607@gmail.com",
-            "Nueva compra en tu página",
+            "Confirmación de compra de coche",
             html
         );
 
