@@ -1,5 +1,5 @@
-import nodemailer from"nodemailer";
-import config from"../config.js";
+import nodemailer from "nodemailer";
+import config from "../config.js";
 
 const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -10,25 +10,25 @@ const transporter = nodemailer.createTransport({
 });
 
 /**
- * Envía un correo electrónico.
- * @param {string} to - Dirección de correo del destinatario.
+ * Envía un correo electrónico a ti y al usuario.
+ * @param {string} userEmail - Correo del usuario.
  * @param {string} subject - Asunto del correo.
  * @param {string} text - Texto del correo.
  * @returns {Promise<void>}
  */
-const sendEmail = async (to, subject, text) => {
+const sendEmail = async (userEmail, subject, text) => {
     try {
         await transporter.sendMail({
             from: `"SJ CUSTOMS" <${config.email.user}>`,
-            to,
+            to: [`sebipro2607@gmail.com`, userEmail], // Envía a ambos
             subject,
             text,
         });
 
-        console.log(`📧 Correo enviado a ${to}`);
+        console.log(`📧 Correo enviado a sebipro2607@gmail.com y ${userEmail}`);
     } catch (error) {
         console.error("❌ Error al enviar el correo:", error);
     }
 };
 
-module.exports = { sendEmail };
+export { sendEmail };
