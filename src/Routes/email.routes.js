@@ -3,6 +3,7 @@ import { sendPurchaseEmail } from "../Controllers/email.controller.js";
 
 const router = express.Router();
 
-router.post("/email", sendPurchaseEmail);
+// Cambia la ruta a /purchase/email
+router.post("/purchase/email", sendPurchaseEmail);
 
 export default router;
