@@ -4,6 +4,8 @@ import loaders from "./Loaders/index.js";
 import { v2 as cloudinary } from 'cloudinary';
 import dotenv from 'dotenv';
 
+import emailRoutes from "./Routes/email.routes.js";
+app.use("/api", emailRoutes);
 dotenv.config();
 
 const PORT = config.port || 5000;

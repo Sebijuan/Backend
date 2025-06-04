@@ -9,6 +9,7 @@ import usersRoutes from"./user.routes.js";
 import likesRoutes from"./likes.routes.js";
 import compareRoutes from"./compare.routes.js";
 import contactRoutes from"./contact.routes.js";
+import emailRoutes from"./email.routes.js";
 
 const router = express.Router();
 
@@ -22,5 +23,5 @@ router.use("/users", usersRoutes);
 router.use("/likes", likesRoutes);
 router.use("/compare", compareRoutes);
 router.use("/contact", contactRoutes);
-
+router.use("/email", emailRoutes);
 export default router;
