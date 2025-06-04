@@ -9,18 +9,19 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-const sendEmail = async (to, subject, text) => {
+const sendEmail = async (to, subject, html) => {
     try {
         await transporter.sendMail({
             from: `"SJ CUSTOMS" <${config.email.user}>`,
-            to, // puede ser un array de emails
+            to,
             subject,
-            text,
+            html, // <-- Cambia 'text' por 'html'
         });
         console.log(`📧 Correo enviado a ${to}`);
     } catch (error) {
         console.error("❌ Error al enviar el correo:", error);
     }
 };
+
 
 export default sendEmail;
