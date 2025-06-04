@@ -9,26 +9,18 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-/**
- * Envía un correo electrónico a ti y al usuario.
- * @param {string} userEmail - Correo del usuario.
- * @param {string} subject - Asunto del correo.
- * @param {string} text - Texto del correo.
- * @returns {Promise<void>}
- */
-const sendEmail = async (userEmail, subject, text) => {
+const sendEmail = async (to, subject, text) => {
     try {
         await transporter.sendMail({
             from: `"SJ CUSTOMS" <${config.email.user}>`,
-            to: [`sebipro2607@gmail.com`, userEmail], // Envía a ambos
+            to, // puede ser un array de emails
             subject,
             text,
         });
-
-        console.log(`📧 Correo enviado a sebipro2607@gmail.com y ${userEmail}`);
+        console.log(`📧 Correo enviado a ${to}`);
     } catch (error) {
         console.error("❌ Error al enviar el correo:", error);
     }
 };
 
-export { sendEmail };
+export default sendEmail;
