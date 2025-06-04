@@ -4,6 +4,15 @@ import User from "../Models/user.model.js";
 import config from "../config.js";
 import nodemailer from "nodemailer";
 
+// Configurar transporte de nodemailer SOLO UNA VEZ
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: process.env.EMAIL_USER, // Tu correo
+        pass: process.env.EMAIL_PASS, // Tu App Password
+    },
+});
+
 export const register = async (req, res) => {
     try {
         const { username, email, password } = req.body;
@@ -43,16 +52,6 @@ export const login = async (req, res) => {
     }
 };
 
-
-// Configurar transporte de nodemailer
-const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.EMAIL_USER, // Tu correo
-        pass: process.env.EMAIL_PASS, // Tu contraseña o App Password
-    },
-});
-
 export const forgotPassword = async (req, res) => {
     try {
         const { email } = req.body;
@@ -65,20 +64,9 @@ export const forgotPassword = async (req, res) => {
         // Generar token de recuperación (opcional)
         const resetToken = Math.random().toString(36).substring(2, 12);
 
-        // Configurar el transporte de correo
-        const transporter = nodemailer.createTransport({
-            host: config.email.host,
-            port: config.email.port,
-            secure: config.email.secure, // true para 465, false para otros
-            auth: {
-                user: config.email.user,
-                pass: config.email.pass
-            }
-        });
-
         // Configurar email
         const mailOptions = {
-            from: `"Soporte" <${config.email.user}>`,
+            from: `"Soporte" <${process.env.EMAIL_USER}>`,
             to: email,
             subject: "Recuperación de contraseña",
             text: `Hola, usa este código para recuperar tu contraseña: ${resetToken}`,
@@ -91,9 +79,10 @@ export const forgotPassword = async (req, res) => {
         res.json({ message: "Correo de recuperación enviado" });
     } catch (error) {
         console.error("❌ Error en forgotPassword:", error);
-        res.status(500).json({ message: "Error al enviar correo", error });
+        res.status(500).json({ message: "Error al enviar correo", error: error.message });
     }
 };
+
 export const resetPassword = async (req, res) => {
     try {
         const { email, newPassword } = req.body;
